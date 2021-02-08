@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form action="" method="post">
+		{% csrf_token %}
+		<select name="course">
+			{% for data in list %}
+			<option value="{{data}}">{{data}}</option>
+			
+			{% endfor %}
+		</select>
+		{{a}}
+		
+		<br><br>
+			{% for data in check %}
+		<input type="checkbox" name="chk[]" value={{data}}>{{data}}
+			{% endfor %}
+		{{b}}
+
+
+		
+		<br><br>
+		
+			<select name='courses[]' multiple="true">
+				{% for data in mult %}
+			<option value="{{data}}">{{data}}</option>
+		{% endfor %}				
+		</select>
+		{{c}}
+		<input type="submit" name="txtbtn" value="Click">
+		<input type="submit" name="txtclear" value="Clear">
+
+		
+
+
+
+	</form>
+		
+
+</body>
+</html>
